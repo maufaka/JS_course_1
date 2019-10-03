@@ -89,35 +89,37 @@ function mathAddition (x, y) {
 
 function mathSubtraction (x, y) {
     let z = x - y;
-    return 'Разность ' + x  + ' + ' + y + ' равна ' + z;
+    return 'Разность ' + x  + ' и ' + y + ' равна ' + z;
 }
 
 function mathMultiplication (x, y) {
     let z = x * y;
-    return 'Произведение ' + x  + ' + ' + y + ' равно ' + z;
+    return 'Произведение ' + x  + ' и ' + y + ' равно ' + z;
 }
 
 function mathDivision (x, y) {
     let z = x / y;
-    return 'Деление ' + x  + ' + ' + y + ' равно ' + z;
+    return 'Деление ' + x  + ' на ' + y + ' равно ' + z;
 }
+console.log(mathDivision (10, -2));
 // Задание 6:
 function mathOperation(arg1, arg2, operation) {
-    var Addition = operation;
     switch (operation) {
-        case sum:
-            mathAddition (arg1, arg2);
+        case 'addition':
+            console.log(mathAddition (arg1, arg2));
         break;
-        case subtraction:
-            mathSubtraction (arg1, arg2);
+        case 'subtraction':
+            console.log(mathSubtraction (arg1, arg2));
         break;
-        case multiplication:
-            mathMultiplication (arg1, arg2);
+        case 'multiplication':
+            console.log(mathMultiplication (arg1, arg2));
         break;
-        case divison:
-            mathDivision (arg1, arg2);
+        case 'divison':
+            console.log(mathDivision (arg1, arg2));
         break;
         default:
             console.log('Введите корректную операцию!');
     }
 }
+
+console.log(mathOperation(3, 5, 'multiplication'));
