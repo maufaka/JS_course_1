@@ -1,67 +1,55 @@
 // Задание 1:
-console.log('Задание 1:');
-var arr = [];
-var x = 1;
-while (x < 100) {
-    x++;
-    arr.push(x);
-}
-var a = 2;
-var b = 2;
-while (a <= 100){
-    a += b;
-    arr.splice(arr.indexOf(a), 1);
-}
-a = 4;
-b = 3;
-while (a < 100){
-    if (a % b === 0 && arr.indexOf(a) !== -1){
-        arr.splice(arr.indexOf(a), 1);
+var max = 999;
+var x = +prompt('Введите число от 0 до 999');
+var digit = {
+    units: 0,
+    tens: 0,
+    hundreds: 0,
+};
+function search () {
+    if (x > 0 && x <= 9){
+        digit.units = x;
+    } else if (x > 0 && x <= 999){
+        digit.units = Math.floor(x % 10);
+        digit.tens = Math.floor(x / 10 % 10);
+        digit.hundreds = Math.floor(x / 100 % 10);
     }else {
-        a++;
+        console.log('Вы ввели число за диапазоном 0 - 999');
+    }
+    console.log(digit);
+}
+// Задание 2:
+const ITEMS = ['Samsung', 'Honor', 'Iphone', 'ZTE', 'Xiaomi', 'Sony', 'Lenovo'];
+const PRICES = [400, 350, 500, 300, 320, 370, 270];
+const ID = [1, 2, 3, 4, 5, 6, 7];
+let prod = createCat ();
+function createCat () {
+    let arr = [];
+    for (let i = 0; i < ITEMS.length; i++) {
+        arr.push (createProd(ITEMS[i], PRICES[i], ID[i]))
+    }
+    return arr;
+}
+function createProd (name, price, id) {
+    return {
+        name: name,
+        price: price,
+        id: id
     }
 }
-a = 6;
-b = 5;
-while (a < 100) {
-    if (a % b === 0 && arr.indexOf(a) !== -1) {
-        arr.splice(arr.indexOf(a), 1);
-    } else {
-        a++;
+let store = {
+    catlog: [],
+    cart: [],
+    create: function () {
+        for (let i = 0; i < ITEMS.length; i++) {
+            this.catlog.push (this._createProd(ITEMS[i], PRICES[i], ID[i]));
+        }
+    },
+    _createProd: function (name, price, id) {
+        return {
+            name: name,
+            price: price,
+            id: id
+        }
     }
-}
-a = 8;
-b = 7;
-while (a < 100) {
-    if (a % b === 0 && arr.indexOf(a) !== -1) {
-        arr.splice(arr.indexOf(a), 1);
-    } else {
-        a++;
-    }
-}
-console.log(arr);
-// Задание 3:
-console.log('Задание 3:');
-var z = Math.floor(Math.random()*9000 + 1000);
-var num = +prompt('Попробуй угадать число, которое я загадал\nВведи четырехзначное число:');
-function numbers (z, num) {
-    if (num === z) {
-        return 'Вы угадали число!'
-    } else if (num < z) { 
-        return numbers (z, num = +prompt('Недобор, попробуй еще'));
-    } else if (num > z) {
-        return numbers (z, num = +prompt('Перебор, попробуй еще'));
-    } else return 'Вы ввели некорректные данные'
-}
-console.log(numbers (z, num));
-// Задание 4:
-console.log('Задание 4:');
-var i;
-    for ( i = 0; i < 9; i++, console.log(i)) {}
-// Задание 5:
-console.log('Задание 5:');
-var str = "";
-for(var i = 1; i <= 20; i++) {
-str += 'x';
-console.log(str);
 }
