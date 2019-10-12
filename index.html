@@ -5,8 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 960px;
+            margin: 0 auto;
+        }
+        .wrp {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        #main {
+            box-shadow: 5px darkgray;
+        }
+        .roulette {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            width: 100%;
+            margin: 5px;
+        }
+        .roulette img {
+            height: 200px;
+        }
+        .chess {
+            width: 400px;
+            margin: 0 auto;
+        }
+        #black {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        #white {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-    <script src="script/main.js"></script>
+    <div class="gallery">
+        <div class="wrp">
+            <img src="img/1.jpg" alt="Samsung" id="main">
+        </div>
+        <div class ="roulette">
+        </div>
+    </div>
+    <div class="chess">
+
+    </div>
+    <script>
+        let roulette = document.querySelector ('.roulette');
+        let mainImg = document.querySelector ('#main');
+        function gallary () {
+            let num = 7;
+            let nodeStr = '';
+            for (let i = 1; i <= num; i++) {
+                nodeStr += `<img src="img/${i}.jpg">`;
+            }
+            roulette.innerHTML = nodeStr;
+        }
+        gallary ()
+    </script>
 </body>
 </html>
