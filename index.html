@@ -30,19 +30,19 @@
         .roulette img {
             height: 200px;
         }
-        .chess {
+        .ch-wrap {
+            margin: 50px auto;
             width: 400px;
-            margin: 0 auto;
+            height: 400px;
+            border: 1px solid #111;
         }
-        #black {
+        .ch-item {
             width: 50px;
             height: 50px;
-            background-color: black;
+            float: left;
         }
-        #white {
-            width: 50px;
-            height: 50px;
-            background-color: white;
+        .ch-black {
+            background: #111;
         }
     </style>
 </head>
@@ -54,7 +54,7 @@
         <div class ="roulette">
         </div>
     </div>
-    <div class="chess">
+    <div class="ch-wrap">
 
     </div>
     <script>
@@ -65,10 +65,28 @@
             let nodeStr = '';
             for (let i = 1; i <= num; i++) {
                 nodeStr += `<img src="img/${i}.jpg">`;
+                
             }
             roulette.innerHTML = nodeStr;
         }
         gallary ()
+
+        var chessWrap = document.querySelector('.ch-wrap');
+
+        var i = 0, count = 0;
+
+        while (count < 64) {
+            var item = document.createElement('div');
+            chessWrap.appendChild(item);
+
+            item.classList.add('ch-item');
+
+            if (i && i % 2)
+                item.classList.add('ch-black')
+
+            i += ((i + 2) % 9) ? 1 : 2;
+            count++;
+        }
     </script>
 </body>
 </html>
