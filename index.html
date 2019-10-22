@@ -5,8 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <div class="gallery">
+        <div class="wrp">
+            <img id="main" src="img/1.jpg" alt="Samsung">
+        </div>
+        <div id ="roulette">
+        </div>
+    </div>
+    <div class="btn-wrp">
+        <button class="btn" data-dir = "-1">left</button>
+        <button class="btn" data-dir = "1">right</button>
+    </div>
+    <div class="calc">
+        <h2>Калькулятор</h2>
+        <input type="text" id = "display">
+        <table>
+            <tr>
+                <td><button data-value = "7">7</button></td>
+                <td><button data-value = "8">8</button></td>
+                <td><button data-value = "9">9</button></td>
+                <td><button data-oper = "/">/</button></td>
+                <td><button data-exec = "exac">=</button></td>
+                
+            </tr>
+            <tr>
+                <td><button data-value = "4">4</button></td>
+                <td><button data-value = "5">5</button></td>
+                <td><button data-value = "6">6</button></td>
+                <td><button data-oper = "*">*</button></td>
+                <td><button data-oper = "reset">C</button></td>
+            </tr>
+            <tr>
+                <td><button data-value = "1">1</button></td>
+                <td><button data-value = "2">2</button></td>
+                <td><button data-value = "3">3</button></td>
+                <td><button data-oper = "-">-</button></td>
+            </tr>
+            <tr>
+                <td><button data-value = "0">0</button></td>
+                <td><button data-value = "+/-">+/-</button></td>
+                <td><button data-value = ".">.</button></td>
+                <td><button data-oper = "+">+</button></td>
+            </tr>
+        </table>
+    </div>
     <script src="script/main.js"></script>
 </body>
 </html>
