@@ -1,0 +1,47 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 960px;
+    margin: 0 auto;
+}
+.wrp {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#main {
+    height: 400px;
+}
+#roulette {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5px;
+}
+#roulette img {
+    height: 200px;
+}
+.btn-wrp {
+    margin: 30px auto;
+    text-align: center;
+}
+.btn {
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    border-radius: 9px;
+    background-color: #998675;
+    text-decoration: none;
+    border-bottom: 3px solid #736356;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #736356;
+    border-bottom: 3px solid #998675;
+}
+
+.btn:active {
+    background-color: #998675;
+}

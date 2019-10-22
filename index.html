@@ -5,88 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            min-width: 960px;
-            margin: 0 auto;
-        }
-        .wrp {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-        #main {
-            box-shadow: 5px darkgray;
-        }
-        .roulette {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-around;
-            width: 100%;
-            margin: 5px;
-        }
-        .roulette img {
-            height: 200px;
-        }
-        .ch-wrap {
-            margin: 50px auto;
-            width: 400px;
-            height: 400px;
-            border: 1px solid #111;
-        }
-        .ch-item {
-            width: 50px;
-            height: 50px;
-            float: left;
-        }
-        .ch-black {
-            background: #111;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <div class="gallery">
         <div class="wrp">
-            <img src="img/1.jpg" alt="Samsung" id="main">
+            <img id="main" src="img/1.jpg" alt="Samsung">
         </div>
-        <div class ="roulette">
+        <div id ="roulette">
         </div>
     </div>
-    <div class="ch-wrap">
-
+    <div class="btn-wrp">
+        <button class="btn" data-dir = "-1">left</button>
+        <button class="btn" data-dir = "1">right</button>
     </div>
-    <script>
-        let roulette = document.querySelector ('.roulette');
-        let mainImg = document.querySelector ('#main');
-        function gallary () {
-            let num = 7;
-            let nodeStr = '';
-            for (let i = 1; i <= num; i++) {
-                nodeStr += `<img src="img/${i}.jpg">`;
+    <div class="calc">
+        <h2>Калькулятор</h2>
+        <input type="text" id = "display">
+        <table>
+            <tr>
+                <td><button data-value = "7">7</button></td>
+                <td><button data-value = "8">8</button></td>
+                <td><button data-value = "9">9</button></td>
+                <td><button data-oper = "/">/</button></td>
+                <td><button data-exec = "exac">=</button></td>
                 
-            }
-            roulette.innerHTML = nodeStr;
-        }
-        gallary ()
-
-        var chessWrap = document.querySelector('.ch-wrap');
-
-        var i = 0, count = 0;
-
-        while (count < 64) {
-            var item = document.createElement('div');
-            chessWrap.appendChild(item);
-
-            item.classList.add('ch-item');
-
-            if (i && i % 2)
-                item.classList.add('ch-black')
-
-            i += ((i + 2) % 9) ? 1 : 2;
-            count++;
-        }
-    </script>
+            </tr>
+            <tr>
+                <td><button data-value = "4">4</button></td>
+                <td><button data-value = "5">5</button></td>
+                <td><button data-value = "6">6</button></td>
+                <td><button data-oper = "*">*</button></td>
+                <td><button data-oper = "reset">C</button></td>
+            </tr>
+            <tr>
+                <td><button data-value = "1">1</button></td>
+                <td><button data-value = "2">2</button></td>
+                <td><button data-value = "3">3</button></td>
+                <td><button data-oper = "-">-</button></td>
+            </tr>
+            <tr>
+                <td><button data-value = "0">0</button></td>
+                <td><button data-value = "+/-">+/-</button></td>
+                <td><button data-value = ".">.</button></td>
+                <td><button data-oper = "+">+</button></td>
+            </tr>
+        </table>
+    </div>
+    <script src="script/main.js"></script>
 </body>
 </html>
