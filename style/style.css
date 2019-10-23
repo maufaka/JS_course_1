@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(110, 109, 109);
+}
+
+.logo {
+    margin: 10px 10px 10px 50px;
+    opacity: 0.7;
+}
+
+.logo:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.logo:active {
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+.cart {
+    margin: 10px 50px 10px 10px;
+    display: flex;
+}
+
+.serh-cart {
+    margin: 10px;
+    padding-left: 15px;
+    border: 2px solid black;
+    border-radius: 7px;
+    background: transparent;
+    outline: none;
+    height: 32px;
+}
+
+.btn-search {
+    margin: 10px;
+    border: none;
+    height: 32px;
+    width: 42px;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-search:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: black;
+}
+
+input:focus {
+    border-color: #F9F0DA
+  }
