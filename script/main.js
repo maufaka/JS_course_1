@@ -15,9 +15,17 @@ function createProd (name, price, id) {
         name: name,
         price: price,
         id: id,
+        img: Image,
         createTemplate: function () {
             return `
-                <>
+            <div class="product-item">
+                <img src="${this.img}" alt="photo">
+                <div class="desc">
+                    <h3>${this.name}</h3>
+                    <p>${this.price}</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
             `
         }
     }
