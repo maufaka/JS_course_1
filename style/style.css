@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 
 header {
@@ -26,6 +27,7 @@ header {
 .cart {
     margin: 10px 50px 10px 10px;
     display: flex;
+    align-items: center;
     position: relative;
 }
 
@@ -42,14 +44,13 @@ header {
 .btn-search {
     margin: 10px;
     border: none;
-    background-image: url('../img/search.png');
     background-color: rgb(110, 109, 109);;
     width: 34px;
     height: 34px;
     outline: none;
     position: absolute;
-    top: 2px;
-    right: 97px;
+    top: 7px;
+    right: 96px;
 }
 
 input:focus {
@@ -89,6 +90,44 @@ main {
 }
 
 .product-item {
-    width: 220px;
+    margin: 10px;
+    width: 300px;
     text-align: center;
+}
+
+.buy-btn {
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 7px;
+    outline: none;
+    color: white;
+    height: 40px;
+    margin: 10px;
+}
+
+.buy-btn:hover {
+    background: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+.buy-btn:active {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.cart-block {
+    width: 200px;
+    min-height: 30px;
+    background-color: #ccc;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+}
+
+.invisible {
+    display: none;
 }
